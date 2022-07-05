@@ -1,0 +1,52 @@
+{
+  "sharded": true,
+  "vindexes": {
+    "hash": {
+      "type": "hash"
+    },
+    "unicode_loose_xxhash":{
+      "type": "unicode_loose_xxhash"
+    }
+  },
+  "tables": {
+
+
+    "customer": {
+      "column_vindexes": [
+        {
+          "column": "customer_id",
+          "name": "hash"
+        }
+      ],
+      "auto_increment": {
+        "column": "customer_id",
+        "sequence": "customer_seq"
+      }
+    },
+
+
+    "corder": {
+      "column_vindexes": [
+        {
+          "column": "customer_id",
+          "name": "hash"
+        }
+      ],
+      "auto_increment": {
+        "column": "order_id",
+        "sequence": "order_seq"
+      }
+    },
+
+
+
+   "product": {
+      "column_vindexes": [
+        {  
+          "column": "customer_id",
+          "name": "unicode_loose_xxhash"
+        }  
+      ]
+    } 
+  }
+}

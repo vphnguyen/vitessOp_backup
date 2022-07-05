@@ -1,0 +1,29 @@
+vttablet \
+ -topo_implementation etcd2 \
+ -topo_global_server_address  "http://10.101.35.247:2379"  \
+ -topo_global_root /vitess/example/global \
+ -log_queries_to_file /home/hadn/vitess/sampleDB/VTDATAROOT/tmp/vttablet_0000000401_querylog.txt \
+ -tablet-path zone1-0000000401 \
+
+ -init_keyspace world_x \
+ -init_shard 0 \
+ -init_tablet_type replica \
+ -port 15401 \
+ -grpc_port 16401 \
+ -service_map 'grpc-queryservice,grpc-tabletmanager,grpc-updatestream' \
+ -pid_file /home/hadn/vitess/sampleDB/VTDATAROOT/vt_0000000401/vttablet.pid \
+ -vtctld_addr http://10.106.54.14:15000/ \
+ -db_host 10.110.224.58 \
+ -db_port 3306 \
+ -db_app_user sa \
+ -db_app_password password \
+ -db_dba_user sa \
+ -db_dba_password password \
+ -db_repl_user sa \
+ -db_repl_password password \
+ -db_filtered_user sa \
+ -db_filtered_password password \
+ -db_allprivs_user sa \
+ -db_allprivs_password password \
+ -init_db_name_override world_x \
+ -init_populate_metadata  

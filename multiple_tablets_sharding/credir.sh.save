@@ -1,0 +1,2 @@
+ssh elastic-02  "mkdir {   /mnt /vitess /f1   ,        }"
+

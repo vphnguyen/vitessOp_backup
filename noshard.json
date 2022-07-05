@@ -1,0 +1,12 @@
+{
+    "tables": {
+        "customers": {},
+        "employees": {},
+        "order": {},
+        "offices": {},
+        "orderdetails": {},
+        "payments": {},
+        "products": {},
+        "productlines": {}
+    }
+}
